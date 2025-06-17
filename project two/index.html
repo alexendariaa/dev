@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>survery form</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    function handleSubmit(event) {
+      event.preventDefault(); // Prevent page reload
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      if (!name || !email) {
+        alert('Please fill in all fields.');
+        return;
+      }
+      // Simulate successful submission
+      alert('Form submitted!\nName: ' + name + '\nEmail: ' + email);
+      // Optionally, reset the form
+      event.target.reset();
+    }
+  </script>
+</head>
+<body>
+    <h1>Survey Form</h1>
+    <form onsubmit="handleSubmit(event)" id="form">
+    <div class="form-control">
+        <label for="name" id="label-name">Name</label>
+        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+    </div>
+    <div class="form-control">
+        <label for="email" id="label-email">Email</label>
+        <input type="email" name="email" id="email" placeholder="Enter your email" required>
+    </div>
+    <div class="form-control">
+        <label for="age" id="label-age">Age</label>
+        <input type="text" name="age" id="age" placeholder="Enter your age">
+    </div>
+    <div class="form-control">
+        <label for="role" id="label-role">which option best describes you?</label>
+        <select name="role" id="role">
+            <option value="student">Student</option>
+            <option value="intern">Intern</option>
+            <option value="professional">Professional</option>
+            <option value="other">Other</option>
+        </select>
+    </div>
+    <div class="form-control">
+        <label>would your like to recommend this github repo to a friend?</label>
+        <label for="yes" id="label-yes">Yes</label>
+        <input type="radio" name="recommend" id="yes" value="yes">
+        <label for="no" id="label-no">No</label>
+        <input type="radio" name="recommend" id="no" value="no">
+        <label for="maybe" id="label-maybe">May be</label>
+        <input type="radio" name="recommend" id="maybe" value="maybe">
+    </div>
+    <div class="form-control">
+        <label>Languages and frameworks known <small>(check all that apply)</small></label>
+        <label for="inp-1">
+            <input type="checkbox" name="inp-1" id="inp-1" value="C"> C
+        </label>
+        <label for="inp-2">
+            <input type="checkbox" name="inp-2" id="inp-2" value="C++"> C++
+        </label>
+        <label for="inp-3">
+            <input type="checkbox" name="inp-3" id="inp-3" value="C#"> C#
+        </label>
+        <label for="inp-4">
+            <input type="checkbox" name="inp-4" id="inp-4" value="Java"> Java
+        </label>
+        <label for="inp-5">
+            <input type="checkbox" name="inp-5" id="inp-5" value="Python"> Python
+        </label>
+        <label for="inp-6">
+            <input type="checkbox" name="inp-6" id="inp-6" value="JavaScript"> JavaScript
+        </label>
+        <label for="inp-7">
+            <input type="checkbox" name="inp-7" id="inp-7" value="React"> React
+        </label>
+        <label for="inp-8">
+            <input type="checkbox" name="inp-8" id="inp-8" value="Angular"> Angular
+        </label>
+        <label for="inp-9">
+            <input type="checkbox" name="inp-9" id="inp-9" value="Django"> Django
+        </label>
+        <label for="inp-10">
+            <input type="checkbox" name="inp-10" id="inp-10" value="spring"> Spring
+        </label>
+    </div>
+    <div class="form-control">
+        <label for="comments" id="label-comments">Any comments or suggestions?</label>
+        <textarea name="comments" id="comments" cols="50" rows="2" placeholder="Enter your comments or suggestions"></textarea>
+    </div>
+    <div class="form-control">
+        <button type="submit" id="submit-btn">Submit</button>
+    </div>
+    </form>
+</body>
+</html>
