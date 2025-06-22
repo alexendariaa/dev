@@ -19,7 +19,7 @@
 	- This method is generally not recommended for larger projects as it mixes content with presentation and can be hard to manage.
 	- Example:
 	  HTML
-	  ```
+	  ```html
 	  <p style="color: blue; font-size: 16px;">This paragraph uses inline CSS.</p>
 	  ```
 - **Internal CSS (or Embedded CSS)**:
@@ -27,7 +27,7 @@
 	- This is useful for single-page websites or when you have styles specific to one page.
 	- Example:
 	  HTML
-	  ```
+	  ```html
 	  <head>
 	   <style>
 	     p {
@@ -59,7 +59,7 @@
 	- These are of several types:
 		- **Element Selector**: Selects HTML elements based on the element name.
 		  CSS
-		  ```
+		  ```css
 		  p { /* Selects all <p> elements */
 		   color: red;
 		   background-color: lightyellow; /* Note: bg-color is not a standard CSS property, it's background-color */
@@ -70,7 +70,7 @@
 		  ```
 		- **ID Selector**: Selects a single, unique element based on its `id` attribute. The `id` must be unique within the HTML page. It's denoted by a `#` followed by the id name.
 		  CSS
-		  ```
+		  ```css
 		  #abc { /* Selects the element with id="abc" */
 		   color: blue;
 		   font-size: 20px;
@@ -78,12 +78,12 @@
 		  ```
 		  HTML example:
 		  HTML
-		  ```
+		  ```html
 		  <div id="abc">This text will be blue and 20px.</div>
 		  ```
 		- **Class Selector**: Selects elements based on their `class` attribute. Multiple elements can share the same class. It's denoted by a `.` followed by the class name.
 		  CSS
-		  ```
+		  ```css
 		  .paraclass { /* Selects all elements with class="paraclass" */
 		   color: green;
 		   font-style: italic;
@@ -91,13 +91,13 @@
 		  ```
 		  HTML example:
 		  HTML
-		  ```
+		  ```html
 		  <p class="paraclass">This paragraph will be green and italic.</p>
 		  <div class="paraclass">This div will also be green and italic.</div>
 		  ```
 		- **Group Selector**: Allows you to apply the same styles to multiple selectors by listing them, separated by commas.
 		  CSS
-		  ```
+		  ```css
 		  p, .paraclass, #uniqueID { /* Selects all <p> elements, all elements with class="paraclass", AND the element with id="uniqueID" */
 		   color: purple;
 		   margin-bottom: 10px;
@@ -111,7 +111,7 @@
 - **Font**:
 	- CSS provides several properties to control the appearance of fonts.
 	  CSS
-	  ```
+	  ```css
 	  p {
 	   font-style: italic;       /* Sets the style of the font (e.g., normal, italic, oblique) */
 	   font-size: 20px;         /* Sets the size of the font */
@@ -124,7 +124,7 @@
 	- There are different ways of specifying colors in CSS:
 		- **Color Names**: Using predefined color names.
 		  CSS
-		  ```
+		  ```css
 		  h1 {
 		   color: red;
 		   background-color: lightblue;
@@ -134,7 +134,7 @@
 			- Specifies a color using a combination of red, green, and blue intensity values, ranging from 0 to 255.
 			- `rgba()` allows for an alpha channel (opacity/transparency), where the last value (alpha) ranges from 0.0 (fully transparent) to 1.0 (fully opaque).
 			  CSS
-			  ```
+			  ```css
 			  p {
 			   background-color: rgb(100, 19, 192); /* A solid color */
 			   color: rgba(100, 189, 192, 0.75); /* Text color with 75% opacity */
@@ -143,7 +143,7 @@
 		- **Hex (Hexadecimal)**:
 			- Specifies a color using a hexadecimal value (e.g., `#RRGGBB` or `#RGB`).
 			  CSS
-			  ```
+			  ```css
 			  #abc {
 			   color: #ffaabb; /* A hex color */
 			   border-color: #F00; /* Short hex for red (#FF0000) */
@@ -153,7 +153,7 @@
 			- Specifies a color using hue (degree on the color wheel from 0 to 360), saturation (percentage), and lightness (percentage).
 			- `hsla()` adds an alpha channel for transparency, similar to `rgba()`.
 			  CSS
-			  ```
+			  ```css
 			  p {
 			   color: hsl(140, 50%, 40%); /* Hue: 140deg, Saturation: 50%, Lightness: 40% */
 			  }
@@ -172,7 +172,7 @@
 	- **Content**: The actual content of the box, where text, images, or other media appear. Its dimensions are `width` and `height`.
 	- **Padding**: The transparent area around the content, inside the border. It provides space between the content and the border.
 	  CSS
-	  ```
+	  ```css
 	  .padded-box {
 	   padding: 20px; /* Applies 20px padding on all four sides */
 	   padding-top: 10px;
@@ -183,7 +183,7 @@
 	  ```
 	- **Border**: A line that goes around the padding and content. It has properties like style, width, and color.
 	  CSS
-	  ```
+	  ```css
 	  p {
 	   border: 3px solid black; /* Shorthand: border-width, border-style, border-color */
 	  }
@@ -195,7 +195,7 @@
 	  ```
 	- **Margin**: The transparent area outside the border. It provides space between this box and other elements.
 	  CSS
-	  ```
+	  ```css
 	  .margined-box {
 	   margin: 15px; /* Applies 15px margin on all four sides */
 	   margin-top: 10px;
@@ -207,7 +207,7 @@
 - **Width and Height**:
 	- These properties define the width and height of the content area of an element.
 	  CSS
-	  ```
+	  ```css
 	  h1 {
 	   width: 500px;
 	   height: 100px; /* Note: height was 500px in your example, adjusted for typical h1 */
@@ -233,7 +233,7 @@
   4. **Respecting custom margin and padding**: Block-level elements respect `margin` and `padding` on all sides (top, right, bottom, left).
 	- Examples of block-level elements: `<div>`, `<p>`, `<h1>` - `<h6>`, `<ul>`, `<li>`, `<form>`.
 	  CSS
-	  ```
+	  ```css
 	  div {
 	   display: block; /* This is often the default for elements like div */
 	   width: 300px;
@@ -250,7 +250,7 @@
   4. **Horizontal margin applies**: `margin-left` and `margin-right` will push other inline elements horizontally, but `margin-top` and `margin-bottom` do not have an effect on the surrounding block elements. Padding applies on all sides, but vertical padding might overlap with other elements. (horizontal margin आती है।)
 	- Examples of inline elements: `<span>`, `<a>`, `<img>`, `<strong>`, `<em>`.
 	  CSS
-	  ```
+	  ```css
 	  span {
 	   display: inline; /* This is often the default for elements like span */
 	   background-color: lightyellow;
@@ -263,7 +263,7 @@
 	  ```
 	- To make an inline element behave like a block element while still flowing with text (allowing width/height and full margin/padding), you can use `inline-block`.
 	  CSS
-	  ```
+	  ```css
 	  span.inline-block-example {
 	   display: inline-block; /* Behaves like a block element but flows inline with text */
 	   width: 100px;
@@ -275,7 +275,7 @@
 	  ```
 	- Method to convert inline to block:
 	  CSS
-	  ```
+	  ```css
 	  span.block-example {
 	   display: block; /* Converts the inline span to a block-level element */
 	   width: 200px;
@@ -297,7 +297,7 @@
 	- The element is positioned relative to its normal position.
 	- Setting the `top`, `right`, `bottom`, and `left` properties will cause it to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element. The original space occupied by the element is preserved. (gap is maintained)
 	  CSS
-	  ```
+	  ```css
 	  .relative-box {
 	   position: relative;
 	   top: 20px;    /* Moves 20px down from its normal position */
@@ -312,7 +312,7 @@
 	- The element is removed from the normal document flow, and no space is created for the element in the page layout. (gab is not maintained, images are shifted)
 	- `top`, `right`, `bottom`, and `left` properties are used to position it.
 	  CSS
-	  ```
+	  ```css
 	  .container {
 	   position: relative; /* Establishes a positioning context for absolute children */
 	   width: 300px;
@@ -344,7 +344,7 @@
   1. **`%` (Percentage)**:
 	- Defines a size relative to the size of the parent element (for most properties like `width`, `height`, `padding`, `margin`) or relative to the font size of the element itself (for `font-size`).
 	  CSS
-	  ```
+	  ```css
 	  .parent {
 	   width: 500px;
 	   font-size: 20px;
@@ -358,7 +358,7 @@
 	  2. **`vh` (Viewport Height)**:
 	- Relative to 1% of the height of the viewport (the browser window's visible area). `100vh` is equal to the full viewport height.
 	  CSS
-	  ```
+	  ```css
 	  .full-height-section {
 	   height: 100vh; /* Takes the full height of the viewport */
 	   background-color: skyblue;
@@ -369,7 +369,7 @@
 	  4. **`px` (Pixel)**:
 	- Defines a size in pixels. Pixels are absolute units relative to the viewing device.
 	  CSS
-	  ```
+	  ```css
 	  p {
 	   font-size: 16px;
 	   border: 1px solid black;
@@ -380,7 +380,7 @@
 	- Relative to the font-size of the parent element (for properties other than `font-size`). When used for `font-size`, it is relative to the font-size of the element itself (or inherited font-size if not set on the element).
 	- Your formula refers to how `font-size` in `em` is calculated: if a parent has `font-size: 20px;` and a child has `font-size: 1.2em;`, the child's font size will be . For other properties like `padding: 1em;` on the child, `1em` would equal `24px`.
 	  CSS
-	  ```
+	  ```css
 	  .parent-em {
 	   font-size: 18px;
 	  }
@@ -394,7 +394,7 @@
 	- Relative to the font-size of the root element (the `<html>` element). This avoids the compounding issue that can occur with `em` units.
 	- Your formula refers to how `font-size` in `rem` is calculated: if the root `<html>` has `font-size: 16px;` and an element has `font-size: 1.5rem;`, its font size will be . Any other property like `padding: 1rem;` will also use `16px` as the base.
 	  CSS
-	  ```
+	  ```css
 	  html {
 	   font-size: 16px; /* Root font size */
 	  }
@@ -411,7 +411,7 @@
 - **`float`**:
 	- Allows an element to be taken out of the normal flow and shifted to the left or right of its container. Text and inline elements will wrap around the floated element.
 	  CSS
-	  ```
+	  ```css
 	  img.float-left {
 	   float: left;
 	   margin-right: 15px; /* Add some space between the image and the text */
@@ -423,7 +423,7 @@
 	  ```
 	  HTML Example:
 	  HTML
-	  ```
+	  ```html
 	  <div>
 	   <img class="float-left" src="image.jpg" alt="Floating image" width="100" height="100">
 	   <p>This text will wrap around the floated image on the left. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
@@ -437,7 +437,7 @@
 		- `both`: The element is moved down below any preceding left or right-floated elements.
 		- `none`: Default. The element is not moved down.
 		  CSS
-		  ```
+		  ```css
 		  .cleared-element {
 		  clear: both; /* This element will appear below any floated elements above it */
 		  border-top: 1px solid #ccc;
@@ -448,7 +448,7 @@
 	- When a container only contains floated elements, its height collapses to zero (or to the height of any non-floated content). This is because floated elements are taken out of the normal flow. (float add करने के बाद चीज़े सही से box में fit नहीं होतीं।)
 	- One common solution to this "collapse" is to use the `overflow` property on the container, or by using a "clearfix" hack. Setting `overflow: auto;` or `overflow: hidden;` on the parent container will cause it to expand to contain its floated children. (इसका solution हम overflow से करते हैं।)
 	  CSS
-	  ```
+	  ```css
 	  .container-with-floats {
 	   border: 1px solid red;
 	   /* overflow: auto;  Uncomment this to see the container expand */
@@ -477,7 +477,7 @@
 - When we mark an element as `display: flex`, by default all its direct children become flex items and are arranged in a row. (जब भी हम flex mark करते है तो by default सब element row में आ जाते हैं।)
 - Key properties for the flex container:
   CSS
-  ```
+  ```css
   .flex-container {
    display: flex;            /* Enables flex layout */
    flex-direction: row;      /* Specifies the direction of the main axis (row, row-reverse, column, column-reverse) */
@@ -499,7 +499,7 @@
   ```
   HTML Example:
   HTML
-  ```
+  ```html
   <div class="flex-container">
    <div class="flex-item">Item 1</div>
    <div class="flex-item">Item 2</div>
@@ -510,7 +510,7 @@
 - **`justify-content`**: This property aligns flex items along the **main axis** of the flex container. (यह main axis के according चीजों को place करता है।)
 	- Common values: `flex-start` (default), `flex-end`, `center`, `space-between`, `space-around`, `space-evenly`.
 	  CSS
-	  ```
+	  ```css
 	  .flex-container-justify {
 	   display: flex;
 	   flex-direction: row; /* Main axis is horizontal */
@@ -530,7 +530,7 @@
 - **`align-items`**: This property aligns flex items along the **cross axis** of the flex container.
 	- Common values: `stretch` (default), `flex-start`, `flex-end`, `center`, `baseline`.
 	  CSS
-	  ```
+	  ```css
 	  .flex-container-align {
 	   display: flex;
 	   flex-direction: row; /* Cross axis is vertical */
@@ -550,7 +550,7 @@
 - **`align-content`**: This property aligns the lines of flex items within the flex container when there is extra space in the **cross-axis** (i.e., when `flex-wrap: wrap` is used and there are multiple lines of items). It has no effect when items are in a single line. (यह बीच की स्पेस हटाता है - more accurately, it distributes space *between lines*).
 	- Common values: `stretch` (default), `flex-start`, `flex-end`, `center`, `space-between`, `space-around`.
 	  CSS
-	  ```
+	  ```css
 	  .flex-container-align-content {
 	   display: flex;
 	   flex-wrap: wrap; /* Required for align-content to have an effect */
@@ -570,7 +570,7 @@
   Media queries allow you to apply different CSS styles based on characteristics of the device or viewport, such as its width, height, orientation, or resolution. This is fundamental for creating responsive web designs. (यदि आप किसी condition के आधार पर css apply करते हैं तो इसी को media query कहते है।)
 - The example code demonstrates changing the background color of an element with the class `.box` when the viewport width is 500px or more. (ऊपर लिखा गया code, 500px width से नीचे आते ही अपना रंग accordingly change कर लेगा।) *Actually, it changes when the width is *at least* 500px (`min-width: 500px`). If it were `max-width: 500px`, it would change when the width is 500px or less.*
   CSS
-  ```
+  ```css
   .box {
    background-color: aqua;
    width: 100px;
@@ -602,7 +602,7 @@
   ```
   HTML Example:
   HTML
-  ```
+  ```html
   <div class="box">Box 1</div>
   <div class="another-box">Another Box Content</div>
   ```
@@ -621,7 +621,7 @@
 		- `<color>`: (Optional) The color of the shadow.
 		- `inset`: (Optional) If specified, the shadow is drawn inside the border (as an inner shadow) instead of outside.
 		  CSS
-		  ```
+		  ```css
 		  .container-shadow {
 		  width: 200px;
 		  height: 100px;
@@ -650,7 +650,7 @@
 - **`text-shadow`**: Applies shadow effects to text.
 	- Syntax: `text-shadow: <offset-x> <offset-y> <blur-radius> <color>;` (Similar to `box-shadow` but without spread and inset)
 	  CSS
-	  ```
+	  ```css
 	  .text-shadow-example {
 	   font-size: 48px;
 	   font-weight: bold;
@@ -672,7 +672,7 @@
 	- Allow you to define reusable values in your CSS. They are defined using a name that starts with two hyphens (e.g., `--primary-color`).
 	- You use the `var()` function to insert the value of a custom property.
 	  CSS
-	  ```
+	  ```css
 	  :root { /* Define global variables on the root element */
 	   --primary-color: green;
 	   --secondary-color: #333;
@@ -700,7 +700,7 @@
   2. Apply the animation to an element using the `animation-name` property and set an `animation-duration`.
 - It is a series of movements.
   CSS
-  ```
+  ```css
   /* The animation code */
   @keyframes example {
    from { background-color: red; transform: scale(1); } /* Starting state */
@@ -726,7 +726,7 @@
   ```
   HTML Example:
   HTML
-  ```
+  ```html
   <div class="animated-div">Animating...</div>
   ```
   
@@ -742,7 +742,7 @@
 	- `transition-delay`: Specifies a delay (in seconds or milliseconds) before the transition effect starts.
 	- `transition`: A shorthand property for setting the four transition properties above.
 	  CSS
-	  ```
+	  ```css
 	  .transition-box {
 	  width: 100px;
 	  height: 100px;
@@ -760,7 +760,7 @@
 	  ```
 	  HTML Example:
 	  HTML
-	  ```
+	  ```html
 	  <div class="transition-box">Hover over me!</div>
 	  ```
 	  
@@ -771,7 +771,7 @@
 - **2D Transforms**:
 	- `rotate(<angle>)`: Rotates the element around its origin (by default, the center of the element) by the specified angle (e.g., `20deg`, `-0.25turn`).
 	  CSS
-	  ```
+	  ```css
 	  div.a {
 	   width: 100px; height: 50px; background-color: lightcoral; margin: 30px;
 	   transform: rotate(20deg);
@@ -779,7 +779,7 @@
 	  ```
 	- `scale(<sx> [, <sy>])`: Scales the element up or down. `scale(2)` doubles the size, `scale(0.5)` halves it. `scaleX()` and `scaleY()` scale horizontally or vertically. `scaleY(1.5)` makes it 1.5 times taller.
 	  CSS
-	  ```
+	  ```css
 	  div.c {
 	   width: 100px; height: 50px; background-color: lightseagreen; margin: 30px;
 	   transform: scaleY(1.5);
@@ -791,7 +791,7 @@
 	  ```
 	- `skew(<ax> [, <ay>])`: Skews the element along the X and/or Y axis. `skewX()` and `skewY()` skew along a single axis. `skewY(20deg)` skews it along the Y-axis.
 	  CSS
-	  ```
+	  ```css
 	  div.b {
 	   width: 100px; height: 50px; background-color: lightskyblue; margin: 30px;
 	   transform: skewY(20deg);
@@ -803,7 +803,7 @@
 	  ```
 	- `translate(<tx> [, <ty>])`: Moves the element from its current position. `translateX()` and `translateY()` move it horizontally or vertically.
 	  CSS
-	  ```
+	  ```css
 	  div.translate-example {
 	   width: 100px; height: 50px; background-color: slateblue; margin: 30px; color:white;
 	   transform: translate(50px, 20px); /* Moves 50px right and 20px down */
@@ -811,7 +811,7 @@
 	  ```
 	- Multiple transform functions can be applied at once, separated by spaces.
 	  CSS
-	  ```
+	  ```css
 	  div.multiple-transforms {
 	   width: 100px; height: 50px; background-color: mediumpurple; margin: 30px;
 	   transform: rotate(10deg) scale(1.1) translateX(20px);
@@ -822,7 +822,7 @@
 	  
 	  HTML
 	  
-	  ```
+	  ```html
 	  <div class="a">Rotated</div>
 	  <div class="b">Skewed Y</div>
 	  <div class="c">Scaled Y</div>
@@ -838,7 +838,7 @@
   CSS Grid Layout is a two-dimensional layout system for the web. It lets you lay content out in rows and columns, and has many features that make building complex layouts straightforward. (css का use करके हम कोई भी layout आसानी से design कर सकते हैं।)
 - To start using Grid, you need a container element with `display: grid` or `display: inline-grid`.
   CSS
-  ```
+  ```css
   .grid-container {
    display: grid;
    grid-template-columns: auto auto auto; /* Defines 3 columns of auto width */
@@ -860,7 +860,7 @@
   ```
   HTML Example:
   HTML
-  ```
+  ```html
   <div class="grid-container">
    <div class="grid-item">1</div>
    <div class="grid-item">2</div>
@@ -872,7 +872,7 @@
   ```
 - **`row-gap`**: This property defines the size of the gap between the rows in a grid container. (यह property rows के बीच में gap करने के लिए use की जाती है)
   CSS
-  ```
+  ```css
   .grid-container-row-gap {
    display: grid;
    grid-template-columns: auto auto;
@@ -883,7 +883,7 @@
   ```
 - **`column-gap`**: This property defines the size of the gap between the columns in a grid container. (यह property columns के बीच gap करने के लिए use की जाती है)
   CSS
-  ```
+  ```css
   .grid-container-column-gap {
    display: grid;
    grid-template-columns: auto auto auto;
@@ -894,7 +894,7 @@
   ```
 - **`gap`**: A shorthand for `row-gap` and `column-gap`. If one value is provided, it's used for both row and column gaps. If two values are provided, the first is for `row-gap` and the second for `column-gap`.
   CSS
-  ```
+  ```css
   .grid-container-gap {
    display: grid;
    grid-template-columns: 1fr 1fr;
@@ -911,7 +911,7 @@
 	- `autofill`: Fills the row with as many columns as it can fit. If the container is wider, it will leave empty tracks if there aren't enough items to fill them.
 	- `autofit`: Behaves similarly to `autofill`, but if the container is wider, it will expand the existing items to fill the available space, collapsing empty tracks.
 	  CSS
-	  ```
+	  ```css
 	  .grid-autofit-minmax {
 	  display: grid;
 	  /* Create as many columns as can fit, each at least 150px wide,
@@ -929,7 +929,7 @@
 	  ```
 	  HTML Example:
 	  HTML
-	  ```
+	  ```html
 	  <div class="grid-autofit-minmax">
 	  <div>Item 1</div>
 	  <div>Item 2</div>
@@ -957,7 +957,7 @@
 	- `translate3d(<tx>, <ty>, <tz>)`: Moves an element along all three axes.
 	- `matrix3d(...)`: Defines a 3D transformation using a 4x4 matrix.
 	  CSS
-	  ```
+	  ```css
 	  .scene {
 	  width: 200px;
 	  height: 200px;
@@ -995,7 +995,7 @@
 	  ```
 	  HTML Example:
 	  HTML
-	  ```
+	  ```html
 	  <div class="scene">
 	  <div class="cube">
 	    <div class="cube-face front">Front</div>
