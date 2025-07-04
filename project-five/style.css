@@ -122,7 +122,7 @@ header {
   right: 200px;
 }
 .home-text {
-  padding:150px 250px;
+  padding:250px 150px;
 }
 .home-text span {
   font-weight: 400;
@@ -478,7 +478,7 @@ header {
     padding: 18px 60px;
   }
   .home-text{
-    padding: 80px 210px;
+    padding: 210px 100px;
   }
   .container img{
     right:100px;
