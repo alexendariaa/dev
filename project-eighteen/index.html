@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Music</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="music-player">
+        <nav>
+          <div class="circle"><i class="fa-solid fa-angle-left"></i></div>
+          <div class="circle"><i class="fa-solid fa-bars"></i></div>
+        </nav>
+        <img src="media/468-thumbnail.png" class="song-img" />
+        <h1>Despacito</h1>
+        <p>Luis Fonsi Ft. Puerto Rican</p>
+        <audio loop id="song">
+          <source src="media/luis_fonsi_despacito.mp3" type="audio/mpeg" />
+        </audio>
+        <input type="range" value="0" id="progress" />
+        <div class="controls" id="song">
+          <div><i class="fa-solid fa-backward"></i></div>
+          <div onclick="playPause()">
+            <i class="fa-solid fa-play" id="play"></i>
+          </div>
+          <div><i class="fa-solid fa-forward"></i></div>
+        </div>
+      </div>
+    </div>
+    <script>
+      let progress = document.getElementById("progress");
+      let song = document.getElementById("song");
+      let ctrlIcon = document.getElementById("play");
+
+      song.onloadedmetadata = function () {
+        progress.max = song.duration;
+        progress.value = song.currentTime;
+      };
+      function playPause() {
+        if (song.paused) {
+          song.play();
+          ctrlIcon.classList.remove("fa-play");
+          ctrlIcon.classList.add("fa-pause");
+        } else {
+          song.pause();
+          ctrlIcon.classList.remove("fa-pause");
+          ctrlIcon.classList.add("fa-play");
+        }
+      }
+
+      // Optional: Update progress bar as song plays
+      song.addEventListener("timeupdate", function () {
+        progress.value = song.currentTime;
+      });
+
+      // Optional: Let user seek by dragging the progress bar
+      progress.addEventListener("input", function () {
+        song.currentTime = progress.value;
+      });
+    </script>
+  </body>
+</html>
